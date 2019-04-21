@@ -182,7 +182,28 @@ client.on("message", message => { //clear
   
        
 });
+client.on('message', message => { /// edit fox
+      if(message.content ===  "M.hids") {
+      if(!message.channel.guild) return;
+      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('ليس لديك صلاحية ادمن :x:');
+             message.channel.overwritePermissions(message.guild.id, {
+             READ_MESSAGES: false
+ })
+              message.channel.send('تم اخفاء الشات ! :white_check_mark:  ') ///edit fox
+ }
+});
 
+
+client.on('message', message => {
+      if(message.content === "M.show") {
+      if(!message.channel.guild) return;
+      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('ليست لديك صلاحية ادمن :x:');
+             message.channel.overwritePermissions(message.guild.id, {
+             READ_MESSAGES: true
+ })
+              message.channel.send('تم اضهار الشات ')
+ }
+});
 
 
 client.login(process.env.BOT_TOKEN);
