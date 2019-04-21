@@ -183,7 +183,7 @@ client.on("message", message => { //clear
        
 });
 client.on('message', message => { /// edit fox
-      if(message.content ===  "M.hids") {
+      if(message.content ===  "M.hide") {
       if(!message.channel.guild) return;
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('ليس لديك صلاحية ادمن :x:');
              message.channel.overwritePermissions(message.guild.id, {
