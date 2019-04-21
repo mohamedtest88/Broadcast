@@ -205,5 +205,8 @@ client.on('message', message => {
  }
 });
 
+client.on('guildCreate', guild => {//لما يجد البوت انو في سيرفر جديد دخل فيه
+client.channels.get("568725728456343563").send('**I Joined To** ' + `${guild.name}` + 'And Owner Of This Server Is ' + '<@' + `${guild.owner.user.tag}`)//هنا يبحث عن روم صاحب الأيدي داك ويرسل الرسالة
+});
 
 client.login(process.env.BOT_TOKEN);
